@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Homework 2">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Homework 2 Question 2">
     <property environment="env"/>
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
@@ -13,7 +13,7 @@
         <pathelement location="C:/Program Files/Eclipse/java-neon/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
         <pathelement location="C:/Program Files/Eclipse/java-neon/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
-    <path id="Homework 2.classpath">
+    <path id="Homework 2 Question 2.classpath">
         <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
@@ -36,7 +36,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="Homework 2.classpath"/>
+            <classpath refid="Homework 2 Question 2.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -53,22 +53,13 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="CalcTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="CalcTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Homework 2.classpath"/>
-        </junit>
-    </target>
     <target name="Question2Test">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="Question2Test" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
-            <classpath refid="Homework 2.classpath"/>
+            <classpath refid="Homework 2 Question 2.classpath"/>
         </junit>
     </target>
     <target name="junitreport">
